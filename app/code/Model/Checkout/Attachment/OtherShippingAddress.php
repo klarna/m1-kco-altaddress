@@ -30,9 +30,9 @@ class Klarna_KcoAltAddress_Model_Checkout_Attachment_OtherShippingAddress extend
     public function collect($checkout)
     {
         $object = $checkout->getObject();
-        $store     = $object->getStore();
+        $store = $object->getStore();
         $attachmentData = $this->_prepareAttachmentData($store);
-        if($attachmentData){
+        if ($attachmentData) {
             $checkout->addAttachmentData(
                 array(
                     'other_delivery_address' => $attachmentData,
@@ -51,9 +51,9 @@ class Klarna_KcoAltAddress_Model_Checkout_Attachment_OtherShippingAddress extend
     public function fetch($checkout)
     {
         $object = $checkout->getObject();
-        $store     = $object->getStore();
+        $store = $object->getStore();
         $attachmentData = $this->_prepareAttachmentData($store);
-        if($attachmentData){
+        if ($attachmentData) {
             $checkout->addAttachmentData(
                 array(
                     'other_delivery_address' => $attachmentData,
@@ -70,17 +70,17 @@ class Klarna_KcoAltAddress_Model_Checkout_Attachment_OtherShippingAddress extend
      */
     protected function _prepareAttachmentData($store)
     {
-        if($this->_getHelper()->isAltAddressEnabled($store)){
+        if ($this->_getHelper()->isAltAddressEnabled($store)) {
             return array(
-                'shipping_method'   => $this->_getHelper()->getShippingMethod($store),
-                'shipping_type'     => $this->_getHelper()->getShippingType($store),
-                'first_name'        => $this->_getHelper()->getFirstName($store),
-                'last_name'         => $this->_getHelper()->getLastName($store),
-                'street_address'    => $this->_getHelper()->getStreetAddress($store),
-                'street_number'     => $this->_getHelper()->getStreetNumber($store),
-                'postal_code'       => $this->_getHelper()->getPostalCode($store),
-                'city'              => $this->_getHelper()->getCity($store),
-                'country'           => $this->_getHelper()->getCountry($store),
+                'shipping_method' => $this->_getHelper()->getShippingMethod($store),
+                'shipping_type' => $this->_getHelper()->getShippingType($store),
+                'first_name' => $this->_getHelper()->getFirstName($store),
+                'last_name' => $this->_getHelper()->getLastName($store),
+                'street_address' => $this->_getHelper()->getStreetAddress($store),
+                'street_number' => $this->_getHelper()->getStreetNumber($store),
+                'postal_code' => $this->_getHelper()->getPostalCode($store),
+                'city' => $this->_getHelper()->getCity($store),
+                'country' => $this->_getHelper()->getCountry($store),
             );
         }
         return false;
