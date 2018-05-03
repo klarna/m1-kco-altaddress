@@ -9,7 +9,8 @@
  */
 
 
-class Klarna_KcoAltAddress_Model_Checkout_Attachment_OtherShippingAddress extends Klarna_Kco_Model_Checkout_Attachment_Abstract
+class Klarna_KcoAltAddress_Model_Checkout_Attachment_OtherShippingAddress
+    extends Klarna_Kco_Model_Checkout_Attachment_Abstract
 {
 
     /**
@@ -29,6 +30,7 @@ class Klarna_KcoAltAddress_Model_Checkout_Attachment_OtherShippingAddress extend
                 )
             );
         }
+
         return $this;
     }
 
@@ -50,6 +52,7 @@ class Klarna_KcoAltAddress_Model_Checkout_Attachment_OtherShippingAddress extend
                 )
             );
         }
+
         return $this;
     }
 
@@ -73,6 +76,7 @@ class Klarna_KcoAltAddress_Model_Checkout_Attachment_OtherShippingAddress extend
                 'country' => $this->_getHelper()->getCountry($store),
             );
         }
+
         return false;
     }
 
